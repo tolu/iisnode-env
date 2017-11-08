@@ -9,13 +9,14 @@ As such `iisnode-env` does nothing if `process.env.IISNODE_VERSION` is defined a
 
 ## Install
 
-```
+```bash
 npm i -S iisnode-env
 ```
 
 ## Usage
 As early as possible in your application, require and configure iisnode-env
-```
+
+```js
 require('iisnode-env').config();
 
 // or use the alias
@@ -25,9 +26,44 @@ require('iisnode-env').load();
 The module will do nothing if ´process.env.IISNODE_VERSION´ is defined.
 In that case iisnode will have already loaded the variables.
 
+## Config
 
+*Alias*: load
+`config` will read your `web.config` file, parse the contents, assign it to `process.env` and return the loaded content or an `error` key if it failed.
+
+```js
+const result = require('iisnode-env').config()
+
+if(result.error) {
+  throw result.error
+}
+
+console.log(result.parsed)
+```
+
+If `process.env.IISNODE_VERSION` is defined, `config` returns an empty object.
+
+You can additionally, pass options to `config`
+
+### Options
+
+#### Path
+
+Default: `web.config`
+
+```js
+require('iisnode-env').config({ path: '/custom/path/to/web.config' })
+```
+
+#### Encoding
+
+Default: `utf8`
+
+```js
+require('iisnode-env').config({ encoding: 'base64' })
+```
 
 ## Credits
-Inspired by
+Inspired by and based on
 * https://github.com/motdotla/dotenv
 
