@@ -7,7 +7,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "node test/main.spec.js"
+    "test": "node test/main.spec.js",
+    "push": "np"
   },
   "repository": {
     "type": "git",
@@ -23,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/tolu/iisnode-env/issues"
   },
-  "homepage": "https://github.com/tolu/iisnode-env#readme"
+  "homepage": "https://github.com/tolu/iisnode-env#readme",
+  "devDependencies": {
+    "np": "^2.16.1"
+  }
 }
