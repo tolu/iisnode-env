@@ -1,7 +1,10 @@
 # iisnode-env
+[![NPM version](https://img.shields.io/npm/v/iisnode-env.svg?style=flat-square)](https://www.npmjs.com/package/iisnode-env) [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/feross/standard)
 
 `iisnode-env` is a zero-dependency module that loads environment variables from the `appSettings`-section of a `web.config` file into [`process.env`](https://nodejs.org/docs/latest/api/process.html#process_process_env). 
 Storing configuration in the environment separate from code is based on [The Twelve-Factor App](http://12factor.net/config) methodology.
+
+
 
 When hosting a node app on [`iisnode`](https://github.com/tjanczuk/iisnode) (for instance in an [Azure WebApp](https://blogs.msdn.microsoft.com/hanuk/2012/05/04/top-benefits-of-running-node-js-on-windows-azure/)), `iisnode` automatically provides `appSettings` from `web.config` via `process.env`.
 
