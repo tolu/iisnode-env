@@ -1,6 +1,6 @@
 {
   "name": "iisnode-env",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "read appSettings from web.config into process.env",
   "main": "lib/main.js",
   "directories": {
