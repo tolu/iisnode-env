@@ -1,0 +1,27 @@
+{
+  "name": "iisnode-env",
+  "version": "1.0.0",
+  "description": "read appSettings from web.config into process.env",
+  "main": "lib/main.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node test/main.spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tolu/iisnode-env.git"
+  },
+  "keywords": [
+    "env",
+    "iisnode",
+    "appSettings"
+  ],
+  "author": "Tobias Lundin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tolu/iisnode-env/issues"
+  },
+  "homepage": "https://github.com/tolu/iisnode-env#readme"
+}
