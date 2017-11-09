@@ -80,3 +80,7 @@ We only get the values we find inside of the `<appSettings>`-section.
 Inspired by and based on
 * https://github.com/motdotla/dotenv
 
+## License
+
+MIT: http://tolu.mit-license.org
+
