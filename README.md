@@ -1,7 +1,7 @@
 # iisnode-env
 [![NPM version](https://img.shields.io/npm/v/iisnode-env.svg?style=flat-square)](https://www.npmjs.com/package/iisnode-env) [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/feross/standard)
 
-`iisnode-env` is a zero-dependency module that loads environment variables from the `appSettings`-section of a `web.config` file into [`process.env`](https://nodejs.org/docs/latest/api/process.html#process_process_env). 
+`iisnode-env` is a zero-dependency module that loads environment variables from the `<appSettings>`-section of a `web.config` file into [`process.env`](https://nodejs.org/docs/latest/api/process.html#process_process_env). 
 Storing configuration in the environment separate from code is based on [The Twelve-Factor App](http://12factor.net/config) methodology.
 
 
@@ -26,12 +26,13 @@ require('iisnode-env').config();
 require('iisnode-env').load();
 ```
 
-The module will do nothing if ´process.env.IISNODE_VERSION´ is defined.
+The module will do nothing if `process.env.IISNODE_VERSION` is defined.
 In that case iisnode will have already loaded the variables.
 
-## Config
+### Config
 
 *Alias*: load
+
 `config` will read your `web.config` file, parse the contents, assign it to `process.env` and return the loaded content or an `error` key if it failed.
 
 ```js
@@ -48,9 +49,9 @@ If `process.env.IISNODE_VERSION` is defined, `config` returns an empty object.
 
 You can additionally, pass options to `config`
 
-### Options
+#### Options
 
-#### Path
+##### Path
 
 Default: `web.config`
 
@@ -58,13 +59,22 @@ Default: `web.config`
 require('iisnode-env').config({ path: '/custom/path/to/web.config' })
 ```
 
-#### Encoding
+##### Encoding
 
 Default: `utf8`
 
 ```js
 require('iisnode-env').config({ encoding: 'base64' })
 ```
+
+## Limits
+
+This is i very simple module and as such there is no support (at this time) for doing this:
+```xml
+<appSettings file="relative file name">
+</appSettings>
+```
+We only get the values we find inside of the `<appSettings>`-section.
 
 ## Credits
 Inspired by and based on
